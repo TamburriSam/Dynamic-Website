@@ -1,0 +1,203 @@
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
+.exploreDiv {
+  display: flex;
+  width: 100vw;
+  background-color: lightgrey;
+  justify-content: space-between;
+  text-align: center;
+  padding: 10px;
+}
+
+.helper {
+  display: flex;
+  list-style: none;
+  width: 200px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.middle-explore {
+  position: relative;
+  left: 50px;
+}
+
+.searchSection {
+  display: flex;
+  width: 100vw;
+  padding: 5px;
+
+  justify-content: space-between;
+}
+
+.contact-card {
+  display: flex;
+  width: 15vw;
+  height: 11vh;
+  background-color: lightgrey;
+  border-radius: 100px;
+  position: relative;
+  right: 30px;
+}
+
+.logo {
+  position: relative;
+  top: 12px;
+
+  width: 17vw;
+  height: 8vh;
+}
+
+.search {
+  width: 50vw;
+  margin: 20px;
+  height: 6vh;
+  position: relative;
+
+  border-radius: 5px;
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.contact-guy {
+  clip-path: circle(30%);
+  width: 120px;
+}
+
+#guitarDrop {
+  z-index: 50;
+}
+
+.side-search-section {
+  display: flex;
+  justify-content: center;
+}
+
+.information-section {
+  position: relative;
+  right: 15px;
+  margin-top: 20px;
+  width: 30vw;
+}
+
+.phone {
+  margin-top: 5px;
+}
+
+.signin {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.fas {
+  font-size: 30px;
+}
+
+.cart {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.iconsactions {
+  width: 8vw;
+  margin-right: 15px;
+  justify-content: space-between;
+  display: flex;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.navbar li {
+  margin-left: 30px;
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #04aa6d;
+}
+
+/* dropdown div- not label- just div */
+.dropdown {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  background-color: #04aa6d;
+  text-align: center;
+}
+
+/* dropdown label div. where it says dropdown */
+.dropdiv {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  z-index: 50;
+}
+
+/* content modal window  */
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  background-color: lightgrey;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content2 {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 50px;
+  left: 90px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.nav-mobile {
+  display: none; /* Hide from browsers that don't support media queries */
+  cursor: pointer;
+  position: absolute;
+  top: 180px;
+  left: 0;
+  background: #34495e url(./hamburger.png) no-repeat center center;
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+.info {
+  width: 100px;
+  height: 100px;
+  color: green;
+}
+
+.mobile-menu {
+  display: none;
+
+  width: 200px;
+  height: 100vh;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 728px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  .dropdiv {
+    display: none;
+  }
+}
