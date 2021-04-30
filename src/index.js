@@ -6,6 +6,8 @@ let mobileIcon = document.querySelector(".nav-mobile");
 let dropdownLabels = document.querySelectorAll(".dropdiv");
 let nav = document.querySelector(".nav");
 let navMobile = document.querySelector(".nav-mobile");
+let slider = document.querySelector(".slider");
+var dots = document.querySelectorAll("dot");
 
 dropdownLabel.addEventListener("click", function () {
   if (dropdownContent1.style.display === "none") {
@@ -58,20 +60,23 @@ mobileIcon.addEventListener("click", function (e) {
 let img = document.querySelector(".photo");
 let imgArray = ["photo1", "photo2", "photo3"];
 let slideIndex = 0;
-
+let prev = document.querySelector(".previous");
 let next = document.querySelector(".next");
-next.addEventListener("click", function () {
+next.addEventListener("click", nextSlide);
+
+function nextSlide() {
   if (slideIndex < imgArray.length) {
     img.src = `${imgArray[slideIndex]}.jpg`;
+
+    dotContainer.childNodes[slideIndex + 1].classList.add("active");
+
     slideIndex++;
   } else if ((slideIndex = imgArray.length)) {
     img.src = `${imgArray[0]}.jpg`;
     slideIndex = 0;
     slideIndex++;
   }
-});
-
-let prev = document.querySelector(".previous");
+}
 prev.addEventListener("click", function () {
   if (slideIndex === 1) {
     //prev.disabled = true;
@@ -82,3 +87,17 @@ prev.addEventListener("click", function () {
     img.src = `${imgArray[slideIndex - 1]}.jpg`;
   }
 });
+
+setInterval(() => {
+  nextSlide();
+}, 5000);
+
+let dotContainer = document.querySelector(".dotContainer");
+
+for (let i = 0; i < imgArray.length; i++) {
+  let circle = document.createElement("div");
+  circle.classList.add("dot");
+  dotContainer.appendChild(circle);
+}
+
+console.log(dotContainer.childNodes);

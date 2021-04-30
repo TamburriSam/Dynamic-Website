@@ -125,6 +125,22 @@
   width: 100vw;
 }
 
+.dot {
+  width: 90px;
+  height: 90px;
+  z-index: 100;
+  clip-path: circle(30%);
+  background-color: green;
+}
+
+.active {
+  background-color: grey;
+}
+
+.dotContainer {
+  display: flex;
+}
+
 /* dropdown div- not label- just div */
 .dropdown {
   position: relative;
