@@ -27,7 +27,9 @@
 
     <div class="searchSection">
 
-      <img class="logo" src="./download-1.png" alt="" />
+        <div class="logo">
+      <img src="./download-1.png" alt="" />
+      </div>
 
       <input class="search" type="text" placeholder="What can we help you find?"
        /> </input>
@@ -53,19 +55,21 @@
 
 
     <!-- nav -->
+    <!-- the nav going around dropdown is throwing everything off. it should be nav wrapping a div with the label- close that- then a ul wit li -->
+
+    <!-- REMEMBER not everything needs a class- we can style like .dropdown-content li{} -->
     <div class="nav">
 
-       <div class="dropdown">
-
-
+<!-- label -->
         <div class="dropdiv">Guitars</div>
+        <!-- content -->
         <div class="dropdown-content">
             <a href = "#">Electric Guitar</a>
             <a href = "#">Acoustic Guitar</a>
             <a href = "#">Left-Handed Guitar</a>
         </div>
 
-        <div class="dropdiv" id="guitardrop"  >Bass</div>
+<div class="dropdiv" id="guitardrop"  >Bass</div>
         <div class="dropdown-content2">
             <a href = "#">4-String Bass</a>
             <a href = "#">5-String Bass</a>
@@ -92,18 +96,29 @@
             <a href = "#">Link 2</a>
             <a href = "#">Link 9</a>
         </div>
-      
+       
 
 
 
       
-    </div>
     </div>
 
     <div class="nav-mobile">
+        <img src="hamburger.png" alt="">
     </div>
 
     <div class="mobile-menu">
+
+    </div>
+
+    <div class="slider">
+        <div class="buttons">
+        <button class="previous"><i class="fas fa-arrow-left"></i></button>
+        <button class="next"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <img src = "hamburger.png" class="photo">
+       
+      
 
     </div>
 

@@ -24,36 +24,36 @@
 
 .searchSection {
   display: flex;
-  width: 100vw;
-  padding: 5px;
-
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .contact-card {
   display: flex;
-  width: 15vw;
-  height: 11vh;
+  width: 180px;
+  height: 6vh;
+  margin-top: 6px;
   background-color: lightgrey;
   border-radius: 100px;
   position: relative;
-  right: 30px;
+  right: 27px;
 }
 
 .logo {
   position: relative;
   top: 12px;
+  width: 176px;
+  height: 50px;
+}
 
-  width: 17vw;
-  height: 8vh;
+.logo img {
+  width: 100%;
 }
 
 .search {
-  width: 50vw;
-  margin: 20px;
-  height: 6vh;
+  height: 4vh;
   position: relative;
-
+  width: 50%;
+  left: 20px;
   border-radius: 5px;
   margin-top: 20px;
   font-size: 24px;
@@ -61,7 +61,6 @@
 
 .contact-guy {
   clip-path: circle(30%);
-  width: 120px;
 }
 
 #guitarDrop {
@@ -70,14 +69,20 @@
 
 .side-search-section {
   display: flex;
-  justify-content: center;
+  width: 20%;
+}
+
+.contact {
+  font-size: 12px;
+}
+.phone {
+  font-size: 12px;
 }
 
 .information-section {
   position: relative;
-  right: 15px;
-  margin-top: 20px;
-  width: 30vw;
+  padding: 10px;
+  line-height: 15px;
 }
 
 .phone {
@@ -99,10 +104,11 @@
 }
 
 .iconsactions {
-  width: 8vw;
-  margin-right: 15px;
+  width: 130px;
   justify-content: space-between;
   display: flex;
+  bottom: 10px;
+  position: relative;
 }
 
 .navbar {
@@ -111,15 +117,12 @@
   flex-direction: row;
 }
 
-.navbar li {
-  margin-left: 30px;
-  text-decoration: underline;
-}
-
 .nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #04aa6d;
+
+  width: 100vw;
 }
 
 /* dropdown div- not label- just div */
@@ -138,42 +141,49 @@
   padding: 16px;
   font-size: 16px;
   border: none;
+  text-align: center;
   z-index: 50;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
 
 /* content modal window  */
 .dropdown-content {
   display: none;
   flex-direction: column;
-  position: absolute;
-  top: 60px;
+  position: relative;
+  top: 50px;
+  left: -220px;
   background-color: lightgrey;
-  min-width: 160px;
+  background-color: #04aa6d;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 50;
+  /* width: 120px; */
+  cursor: pointer;
 }
 
 .dropdown-content2 {
+  background-color: #04aa6d;
   display: none;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   top: 50px;
-  left: 90px;
-  background-color: #f1f1f1;
-  min-width: 160px;
+  right: 40px;
+  width: 120px;
+
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 50;
 }
 
 .nav-mobile {
   display: none; /* Hide from browsers that don't support media queries */
   cursor: pointer;
   position: absolute;
-  top: 180px;
-  left: 0;
-  background: #34495e url(./hamburger.png) no-repeat center center;
+  background: center;
   height: 40px;
   width: 40px;
+  z-index: 1;
   border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -187,17 +197,70 @@
 
 .mobile-menu {
   display: none;
-
   width: 200px;
   height: 100vh;
+  z-index: 1;
 }
 
+.slider {
+  margin: auto;
+  width: 90vw;
+  border: 8px solid black;
+  height: 50vh;
+  margin-top: 10px;
+}
+
+.slider img {
+  height: 48vh;
+  width: 90vw;
+  position: relative;
+  top: -37px;
+}
+
+.next {
+  position: relative;
+
+  z-index: 50;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous {
+  position: relative;
+  z-index: 50;
+}
 @media only screen and (min-width: 320px) and (max-width: 728px) {
   .nav-mobile {
     display: block;
+    margin: auto;
+    position: relative;
+    width: 100px;
+    height: 100px;
   }
 
   .dropdiv {
     display: none;
+  }
+
+  .nav {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1428px) {
+  .phone {
+    display: none;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .contact-card {
+    width: 60px;
   }
 }

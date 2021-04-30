@@ -1,105 +1,84 @@
-const dropdown = document.querySelector(".dropdiv");
-const dropdown2 = document.querySelector("#guitardrop");
-const content1 = document.querySelector(".dropdown-content");
-const content2 = document.querySelector(".dropdown-content2");
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobile = document.querySelector(".nav-mobile");
-const body = document.querySelector("body");
-const dropDiv = document.querySelector(".dropdiv");
-const info = document.querySelector(".mobile-menu");
-const container = document.querySelector(".dropdown");
+let dropdownLabel = document.querySelector(".dropdiv");
+let dropdownLabel2 = document.querySelector("#guitardrop");
+let dropdownContent1 = document.querySelector(".dropdown-content");
+let dropdownContent2 = document.querySelector(".dropdown-content2");
+let mobileIcon = document.querySelector(".nav-mobile");
+let dropdownLabels = document.querySelectorAll(".dropdiv");
+let nav = document.querySelector(".nav");
+let navMobile = document.querySelector(".nav-mobile");
 
-mobile.addEventListener("click", function () {
-  //document.queryselectorall
-  dropDiv.style.display = "block";
-  document.querySelectorAll(".dropdiv").forEach((drop) => {
-    drop.style.display = "block";
-  });
-  info.style.display = "block";
-  info.innerHTML = `  <div class="dropdown">
-    <div class="dropdiv">Guitars</div>
-    <div class="dropdown-content">
-        <a href = "#">Electric Guitar</a>
-        <a href = "#">Acoustic Guitar</a>
-        <a href = "#">Left-Handed Guitar</a>
-    </div>
-  
-    <div class="dropdiv" id="guitardrop"  >Bass</div>
-    <div class="dropdown-content2">
-        <a href = "#">4-String Bass</a>
-        <a href = "#">5-String Bass</a>
-        <a href = "#">6-String Bass</a>
-    </div>
-  
-    <div class="dropdiv">Drums</div>
-    <div id="guitarDrop" class="dropdown-content">
-        <a href = "#">Link 1</a>
-        <a href = "#">Link 2</a>
-        <a href = "#">Link 9</a>
-    </div>
-  
-    <div class="dropdiv">Keyboard</div>
-    <div id="guitarDrop" class="dropdown-content">
-        <a href = "#">Link 1</a>
-        <a href = "#">Link 2</a>
-        <a href = "#">Link 9</a>
-    </div>
-  
-    <div class="dropdiv">Mics</div>
-    <div id="guitarDrop" class="dropdown-content">
-        <a href = "#">Link 1</a>
-        <a href = "#">Link 2</a>
-        <a href = "#">Link 9</a>
-    </div>
-  </div>`;
-  mobile.appendChild(info);
-  container.style.display = "flex";
-  container.style.flexDirection = "column";
-});
-
-dropdown.addEventListener("click", function () {
-  showContent(content1);
-});
-dropdown2.addEventListener("click", function () {
-  showContent(content2);
-});
-
-function showContent(drop) {
-  if (drop.style.display === "none") {
-    drop.style.display = "flex";
+dropdownLabel.addEventListener("click", function () {
+  if (dropdownContent1.style.display === "none") {
+    dropdownContent1.style.display = "flex";
   } else {
-    drop.style.display = "none";
+    dropdownContent1.style.display = "none";
   }
-}
+});
 
-//might need to transfer this e
+dropdownLabel2.addEventListener("click", function () {
+  if (dropdownContent2.style.display === "none") {
+    dropdownContent2.style.display = "flex";
+  } else {
+    dropdownContent2.style.display = "none";
+  }
+});
+
 document.addEventListener("click", function (e) {
-  canClose(e, info, dropDiv, content1);
-  canClose(e, info, dropdown2, content2);
+  if (!e.target.closest("body") || e.target.closest(".slider")) {
+    dropdownContent1.style.display = "none";
+    dropdownContent2.style.display = "none";
+  }
 });
 
-/* function canClose(e, info, drop, content) {
-  if (mobileMenu.style.display === "block") {
-    if (!e.target.closest(".nav-mobile") && !e.target.closest(".info")) {
-      info.style.display = "none";
-      drop.style.display = "none";
-      content.style.display = "none";
-      console.log(e.target.parentElement.parentElement);
-    }
-  }
-} */
+let body = document.querySelector("body");
 
-const nav = document.querySelector(".nav");
+mobileIcon.addEventListener("click", function (e) {
+  if (nav.style.display === "none") {
+    nav.style.display = "block";
+    dropdownLabel.style.display = "block";
 
-function canClose(e, info, drop, content) {
-  /* if (mobileMenu.style.display === "block") { */
-  if (!e.target.closest("body")) {
-    /*  info.style.display = "none";
-      drop.style.display = "none";
-      content.style.display = "none"; */
+    dropdownLabels.forEach((label) => {
+      label.style.display = "block";
+    });
 
-    nav.style.display = "none";
+    dropdownContent1.style.top = "0px";
+    dropdownContent1.style.left = "0px";
+
+    dropdownContent2.style.top = "0px";
+    dropdownContent2.style.left = "0px";
+    dropdownContent2.style.width = "100%";
   } else {
-    console.log("clicked");
+    nav.style.display = "none";
+    dropdownLabels.forEach((label) => {
+      label.style.display = "none";
+    });
   }
-}
+});
+
+let img = document.querySelector(".photo");
+let imgArray = ["photo1", "photo2", "photo3"];
+let slideIndex = 0;
+
+let next = document.querySelector(".next");
+next.addEventListener("click", function () {
+  if (slideIndex < imgArray.length) {
+    img.src = `${imgArray[slideIndex]}.jpg`;
+    slideIndex++;
+  } else if ((slideIndex = imgArray.length)) {
+    img.src = `${imgArray[0]}.jpg`;
+    slideIndex = 0;
+    slideIndex++;
+  }
+});
+
+let prev = document.querySelector(".previous");
+prev.addEventListener("click", function () {
+  if (slideIndex === 1) {
+    //prev.disabled = true;
+    img.src = `${imgArray[imgArray.length - 1]}.jpg`;
+    slideIndex = 3;
+  } else {
+    slideIndex--;
+    img.src = `${imgArray[slideIndex - 1]}.jpg`;
+  }
+});
