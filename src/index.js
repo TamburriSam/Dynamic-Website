@@ -7,7 +7,7 @@ let dropdownLabels = document.querySelectorAll(".dropdiv");
 let nav = document.querySelector(".nav");
 let navMobile = document.querySelector(".nav-mobile");
 let slider = document.querySelector(".slider");
-var dots = document.querySelectorAll("dot");
+let dots = document.querySelectorAll(".dot");
 
 dropdownLabel.addEventListener("click", function () {
   if (dropdownContent1.style.display === "none") {
@@ -65,17 +65,36 @@ let next = document.querySelector(".next");
 next.addEventListener("click", nextSlide);
 
 function nextSlide() {
+  let dots = document.querySelectorAll(".dot");
   if (slideIndex < imgArray.length) {
     img.src = `${imgArray[slideIndex]}.jpg`;
-
-    dotContainer.childNodes[slideIndex + 1].classList.add("active");
-
     slideIndex++;
+
+    /*  dotContainer.childNodes[slideIndex + 1].classList.add("active"); */
+
+    /* dots[slideIndex].classList.add("active"); */
+
+    dots.forEach((dot, index) => {
+      index = index + 1;
+      console.log(`${dot} Index: ${index}`);
+    });
   } else if ((slideIndex = imgArray.length)) {
     img.src = `${imgArray[0]}.jpg`;
     slideIndex = 0;
     slideIndex++;
   }
+
+  dots.forEach((dot, i) => {
+    if (dot.classList.contains("active")) {
+      dot.classList.remove("active");
+    } else if (i === slideIndex - 1) {
+      dot.classList.add("active");
+    }
+  });
+
+  console.log(dots[1].className);
+
+  console.log(slideIndex);
 }
 prev.addEventListener("click", function () {
   if (slideIndex === 1) {
@@ -99,5 +118,3 @@ for (let i = 0; i < imgArray.length; i++) {
   circle.classList.add("dot");
   dotContainer.appendChild(circle);
 }
-
-console.log(dotContainer.childNodes);
