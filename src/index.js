@@ -58,7 +58,7 @@ mobileIcon.addEventListener("click", function (e) {
 });
 
 let img = document.querySelector(".photo");
-let imgArray = ["photo1", "photo2", "photo3"];
+let imgArray = ["photo1", "photo2", "photo3", "photo4"];
 let slideIndex = 0;
 let prev = document.querySelector(".previous");
 let next = document.querySelector(".next");
@@ -69,33 +69,32 @@ function nextSlide() {
   if (slideIndex < imgArray.length) {
     img.src = `${imgArray[slideIndex]}.jpg`;
     slideIndex++;
-
-    /*  dotContainer.childNodes[slideIndex + 1].classList.add("active"); */
-
-    /* dots[slideIndex].classList.add("active"); */
-
-    dots.forEach((dot, index) => {
-      index = index + 1;
-      console.log(`${dot} Index: ${index}`);
-    });
   } else if ((slideIndex = imgArray.length)) {
     img.src = `${imgArray[0]}.jpg`;
     slideIndex = 0;
     slideIndex++;
   }
 
-  dots.forEach((dot, i) => {
+  //remember that logic works like this sometime
+  //doing the thing youd think u do last, first
+  dots.forEach((dot, index) => {
     if (dot.classList.contains("active")) {
       dot.classList.remove("active");
-    } else if (i === slideIndex - 1) {
+    } else if (index === slideIndex - 1) {
       dot.classList.add("active");
     }
+
+    dot.addEventListener("click", function () {
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].classList.remove("active");
+        slideIndex = index + 1;
+        img.src = `${imgArray[index]}.jpg`;
+        this.classList.add("active");
+      }
+    });
   });
-
-  console.log(dots[1].className);
-
-  console.log(slideIndex);
 }
+
 prev.addEventListener("click", function () {
   if (slideIndex === 1) {
     //prev.disabled = true;
