@@ -125,11 +125,16 @@
 }
 
 .dot {
-  width: 90px;
-  height: 90px;
+  width: 20px;
+  height: 20px;
   z-index: 100;
   clip-path: circle(30%);
-  background-color: green;
+  background-color: black;
+  cursor: pointer;
+}
+
+body {
+  text-align: center;
 }
 
 .active {
@@ -138,6 +143,8 @@
 
 .dotContainer {
   display: flex;
+  width: 100vw;
+  justify-content: center;
 }
 
 /* dropdown div- not label- just div */
