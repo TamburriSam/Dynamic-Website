@@ -4,129 +4,216 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link
+      rel="stylesheet"
+      href="//use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
 
     <title>Dynamic UI</title>
   </head>
   <body>
+    <div id="overlay"></div>
     <!-- main top bar -->
     <div class="exploreDiv">
-
       <h3>Why Shop With Us?</h3>
-      <h3 class="middle-explore">Explore our Used Collection to find one-of-a-kind gear</h3>
+      <h3 class="middle-explore">
+        Explore our Used Collection to find one-of-a-kind gear
+      </h3>
       <div>
-
         <ul class="helper">
           <li>Rewards</li>
           <li>Blog</li>
           <li>Help</li>
         </ul>
-
       </div>
     </div>
 
     <div class="searchSection">
-
-        <div class="logo">
-      <img src="./download-1.png" alt="" />
+      <div class="logo">
+        <img src="./download-1.png" alt="" />
       </div>
 
-      <input class="search" type="text" placeholder="What can we help you find?"
-       /> </input>
+      <!--  <input class="search" type="text" placeholder="What can we help you find?"
+       /> </input> -->
 
-       <div class="side-search-section">
-       <div class ="contact-card">
-       <img class="contact-guy"src = "./headshot-guy-wearing-spectacles-looking-260nw-1450012283.webp" />
+      <div class="side-search-section">
+        <div class="contact-card">
+          <img
+            class="contact-guy"
+            src="./headshot-guy-wearing-spectacles-looking-260nw-1450012283.webp"
+          />
 
-       <div class="information-section">
-       <h4 class ="contact">Contact Us</h4>
-       <h4 class="phone">800-449-9128</h4>
-       </div>
-
-     
-       </div>
-       <div class="iconsactions">
-        <h1 class="signin"><i class="fas fa-user"></i> <br>Sign In</h1>
-       
-        <h1 class="cart"><i class="fas fa-shopping-cart"></i> <br>Cart</h1>
+          <div class="information-section">
+            <h4 class="contact">Contact Us</h4>
+            <h4 class="phone">800-449-9128</h4>
+          </div>
         </div>
-    </div>
-    </div>
+        <div class="iconsactions">
+          <h1 class="signin"><i class="fas fa-user"></i> <br />Sign In</h1>
 
+          <h1 class="cart"><i class="fas fa-shopping-cart"></i> <br />Cart</h1>
+        </div>
+      </div>
+    </div>
 
     <!-- nav -->
     <!-- the nav going around dropdown is throwing everything off. it should be nav wrapping a div with the label- close that- then a ul wit li -->
 
     <!-- REMEMBER not everything needs a class- we can style like .dropdown-content li{} -->
     <div class="nav">
+      <!-- label -->
+      <div class="dropdiv">Guitars</div>
+      <!-- content -->
+      <div class="dropdown-content">
+        <a href="#">Electric Guitar</a>
+        <a href="#">Acoustic Guitar</a>
+        <a href="#">Left-Handed Guitar</a>
+      </div>
 
-<!-- label -->
-        <div class="dropdiv">Guitars</div>
-        <!-- content -->
-        <div class="dropdown-content">
-            <a href = "#">Electric Guitar</a>
-            <a href = "#">Acoustic Guitar</a>
-            <a href = "#">Left-Handed Guitar</a>
-        </div>
+      <div class="dropdiv" id="guitardrop">Bass</div>
+      <div class="dropdown-content2">
+        <a href="#">4-String Bass</a>
+        <a href="#">5-String Bass</a>
+        <a href="#">6-String Bass</a>
+      </div>
 
-<div class="dropdiv" id="guitardrop"  >Bass</div>
-        <div class="dropdown-content2">
-            <a href = "#">4-String Bass</a>
-            <a href = "#">5-String Bass</a>
-            <a href = "#">6-String Bass</a>
-        </div>
+      <div class="dropdiv">Drums</div>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 9</a>
+      </div>
 
-        <div class="dropdiv">Drums</div>
-        <div class="dropdown-content">
-            <a href = "#">Link 1</a>
-            <a href = "#">Link 2</a>
-            <a href = "#">Link 9</a>
-        </div>
+      <div class="dropdiv">Keyboard</div>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 9</a>
+      </div>
 
-        <div class="dropdiv">Keyboard</div>
-        <div class="dropdown-content">
-            <a href = "#">Link 1</a>
-            <a href = "#">Link 2</a>
-            <a href = "#">Link 9</a>
-        </div>
+      <div class="dropdiv">Mics</div>
+      <div class="dropdown-content">
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 9</a>
+      </div>
 
-        <div class="dropdiv">Mics</div>
-        <div class="dropdown-content">
-            <a href = "#">Link 1</a>
-            <a href = "#">Link 2</a>
-            <a href = "#">Link 9</a>
-        </div>
-       
-
-
-
-      
+      <div class="dropdiv" id="modal">Order Bulk</div>
     </div>
 
     <div class="nav-mobile">
-        <img src="hamburger.png" alt="">
+      <img src="hamburger.png" alt="" />
     </div>
 
-    <div class="mobile-menu">
-
-    </div>
+    <div class="mobile-menu"></div>
 
     <div class="slider">
-        <div class="buttons">
+      <div class="buttons">
         <button class="previous"><i class="fas fa-arrow-left"></i></button>
         <button class="next"><i class="fas fa-arrow-right"></i></button>
+      </div>
+      <img src="hamburger.png" class="photo" />
+    </div>
+
+    <div class="dotContainer"></div>
+
+    <div class="bulkModal">
+      <button class="close">X</button>
+
+      <form onsubmit="event.preventDefault();">
+        <div class="formMoveMe">
+          <div id="txt"></div>
+          <br />
+          <!-- EMAIL -->
+          <div class="inputContainer">
+            <label class="mailLabel" for="mail">Email</label>
+            <input
+              type="text"
+              id="mail"
+              name="mail"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+              oninvalid="this.setCustomValidity('Need valid Email')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </div>
+
+          <div class="inputContainer">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              id="country"
+              name="country"
+              minlength="5"
+              maxlength="30"
+              oninvalid="this.setCustomValidity('Need Correct Country')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </div>
+
+          <div class="inputContainer">
+            <label for="zip">Zip Code</label>
+            <input
+              type="text"
+              id="zip"
+              name="zip"
+              minlength="5"
+              maxlength="30"
+              oninvalid="this.setCustomValidity('Need valid Zip')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+
+            <input
+              type="text"
+              id="pass"
+              name="pass"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              oninvalid="this.setCustomValidity('Need valid password')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="passwordValidationLabel" for="passwordValidation"
+              >Confirm PW</label
+            >
+
+            <input
+              type="text"
+              id="passValidation"
+              name="passValidation"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              oninvalid="this.setCustomValidity('Need valid password')"
+              oninput="setCustomValidity('')"
+              required
+            />
+          </div>
+
+          <button type="submit" class="subbtn">Submit</button>
         </div>
-        <img src = "hamburger.png" class="photo">
-       
-      
-
-    </div>
- 
-    <div class="dotContainer">
-        
+      </form>
     </div>
 
+    <script>
+      function checkEmail() {
+        let regex = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+        const email = document.getElementById("mail");
 
+        if (regex.test(email.value)) {
+          console.log(true);
+        } else {
+          email.setCustomValidity("Need to enter correct email");
+        }
+        console.log(regex.test(email.value));
+      }
+    </script>
     <script src="main.js"></script>
   </body>
 </html>
