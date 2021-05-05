@@ -48,7 +48,7 @@ document.addEventListener("click", function (e) {
 
 let body = document.querySelector("body");
 
-mobileIcon.addEventListener("click", function (e) {
+mobileIcon.addEventListener("click", function () {
   if (nav.style.display === "none") {
     nav.style.display = "block";
     dropdownLabel.style.display = "block";
