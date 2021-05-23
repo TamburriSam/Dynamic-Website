@@ -1,7 +1,6 @@
 {
   "name": "dynamicui",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,10 +11,19 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.1",
     "babel-loader": "^8.2.2",
-    "webpack": "^5.36.2",
-    "webpack-cli": "^4.6.0"
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TamburriSam/Dynamic-Website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TamburriSam/Dynamic-Website/issues"
+  },
+  "homepage": "https://github.com/TamburriSam/Dynamic-Website#readme",
+  "description": ""
 }

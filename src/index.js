@@ -205,3 +205,7 @@ function test() {
     txt.innerHTML = "Email not valid";
   }
 }
+
+let phototarget = document.querySelectorAll(".photo");
+
+console.log(phototarget.length);
